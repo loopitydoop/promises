@@ -5,9 +5,18 @@
 <p>This is a website to test out javascript promises</p>
 <script>
     let waitForAPI = new Promise(function callAPI(resolve, reject) {
-        let APIResponse = setTimeout()
-        resolve()
-    })
+        try {
+        let APIResponse = setTimeout(() => {return "hello"}, 5000);
+        resolve(APIResponse);
+        } catch(error) {
+            console.error("An error occurred:",error.message);
+            reject(error);
+        }
+    });
+    
+    waitForAPI.then(APIResponse => {
+        console.log(APIResponse);
+        })
 </script>
 </body>
 </html>
