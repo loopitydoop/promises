@@ -6,8 +6,8 @@
 <script>
     let waitForAPI = new Promise(function callAPI(resolve, reject) {
         try {
-        let APIResponse = setTimeout(() => {return "hello"}, 5000);
-        resolve(APIResponse);
+            let APIResponse = setTimeout(() => {return "hello"}, 5000);
+            resolve(APIResponse);
         } catch(error) {
             console.error("An error occurred:",error.message);
             reject(error);
@@ -16,9 +16,9 @@
     
     waitForAPI.then(APIResponse => {
         console.log(APIResponse);
-        })
+        });
 
-    console.log("hello this is a test to see if the console is working")
+    console.log("hello this is a test to see if the console is working");
 </script>
 </body>
 </html>
